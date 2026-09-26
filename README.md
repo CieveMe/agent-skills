@@ -14,8 +14,8 @@ These are the rule sets I actually give my coding agents (Claude Code / Codex / 
 | [`deployment-pitfalls`](skills/deployment-pitfalls/SKILL.md) · [EN](skills/deployment-pitfalls/SKILL.en.md) | Six remote-deployment traps: non-ASCII paths silently breaking `ssh`/`scp` on Windows, hot-swapping a JAR and getting `ClassNotFoundException`, CRLF poisoning shell scripts, PowerShell console encoding corrupting CJK data, and quoting hell through four nested interpreters. |
 | [`docker-springboot-production`](skills/docker-springboot-production/SKILL.md) · [EN](skills/docker-springboot-production/SKILL.en.md) | Shipping a Spring Boot app with a dev-grade Docker setup: MySQL 8.4 rejecting the old auth flag, `#` in a password truncated by the shell, Redisson failing AUTH against a passwordless Redis, wrong file-upload domain after deploy. |
 | [`database-operation-safety`](skills/database-operation-safety/SKILL.md) · [EN](skills/database-operation-safety/SKILL.en.md) | A data-changing `UPDATE`/`DELETE` that quietly touches the wrong rows, because a filter condition in the instruction was read as background prose. |
-| [`wechat-pay-v3-yudao`](skills/wechat-pay-v3-yudao/SKILL.md) | Getting WeChat Pay V3 integration wrong: signature handling, callback idempotency, refund flows, certificate placement. |
-| [`wechat-pay-v3-yudao/mock-zero-tolerance.md`](skills/wechat-pay-v3-yudao/mock-zero-tolerance.md) | Shipping payment code that "works" against mocks. Written after three real rollbacks. |
+| [`wechat-pay-v3-yudao`](skills/wechat-pay-v3-yudao/SKILL.md) · [EN](skills/wechat-pay-v3-yudao/SKILL.en.md) | Getting WeChat Pay V3 integration wrong: certificate placement, silent `@ConfigurationProperties` binding failures, callback verification, callback idempotency, and mixing up the callback result type with the order result type. |
+| [`wechat-pay-v3-yudao/mock-zero-tolerance.md`](skills/wechat-pay-v3-yudao/mock-zero-tolerance.md) · [EN](skills/wechat-pay-v3-yudao/mock-zero-tolerance.en.md) | Shipping payment code that "works" against mocks. Written after three real rollbacks — and specifically about how AI assistants resurrect mock code. |
 | [`weighted-lottery-engine`](skills/weighted-lottery-engine/SKILL.md) | Weighted-random draw engines that are unfair, unreproducible, or unable to change probability at runtime. |
 | [`yudao-hot-config-pattern`](skills/yudao-hot-config-pattern/SKILL.md) | Marketing/campaign parameters that require a redeploy to change. The pattern: an independent endpoint plus a lightweight modal, changeable at runtime with zero downtime. |
 | [`yudao-codegen-pitfalls`](skills/yudao-codegen-pitfalls/SKILL.md) | Trusting generated CRUD code. The traps it leaves behind in this framework. |
@@ -49,7 +49,7 @@ Or drop a single folder into `.claude/skills/` inside a project. Each skill is s
 
 ## Roadmap
 
-- English translations of the remaining skill bodies (4 of 11 done: `deployment-pitfalls`, `database-operation-safety`, `ai-dev-best-practices`, `docker-springboot-production`)
+- English translations of the remaining skill bodies (6 of 11 done: `deployment-pitfalls`, `database-operation-safety`, `ai-dev-best-practices`, `docker-springboot-production`, `wechat-pay-v3-yudao`, `mock-zero-tolerance`)
 - The `mysql-ops-mcp` pattern as a skill: read-only data access for agents
 - A checklist skill for "deliverable" — what must exist before a handover counts as done
 
