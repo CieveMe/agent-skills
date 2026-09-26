@@ -16,11 +16,11 @@ These are the rule sets I actually give my coding agents (Claude Code / Codex / 
 | [`database-operation-safety`](skills/database-operation-safety/SKILL.md) · [EN](skills/database-operation-safety/SKILL.en.md) | A data-changing `UPDATE`/`DELETE` that quietly touches the wrong rows, because a filter condition in the instruction was read as background prose. |
 | [`wechat-pay-v3-yudao`](skills/wechat-pay-v3-yudao/SKILL.md) · [EN](skills/wechat-pay-v3-yudao/SKILL.en.md) | Getting WeChat Pay V3 integration wrong: certificate placement, silent `@ConfigurationProperties` binding failures, callback verification, callback idempotency, and mixing up the callback result type with the order result type. |
 | [`wechat-pay-v3-yudao/mock-zero-tolerance.md`](skills/wechat-pay-v3-yudao/mock-zero-tolerance.md) · [EN](skills/wechat-pay-v3-yudao/mock-zero-tolerance.en.md) | Shipping payment code that "works" against mocks. Written after three real rollbacks — and specifically about how AI assistants resurrect mock code. |
-| [`weighted-lottery-engine`](skills/weighted-lottery-engine/SKILL.md) | Weighted-random draw engines that are unfair, unreproducible, or unable to change probability at runtime. |
-| [`yudao-hot-config-pattern`](skills/yudao-hot-config-pattern/SKILL.md) | Marketing/campaign parameters that require a redeploy to change. The pattern: an independent endpoint plus a lightweight modal, changeable at runtime with zero downtime. |
-| [`yudao-codegen-pitfalls`](skills/yudao-codegen-pitfalls/SKILL.md) | Trusting generated CRUD code. The traps it leaves behind in this framework. |
-| [`yudao-appapi-integration`](skills/yudao-appapi-integration/SKILL.md) | Wiring a mini-program client to the framework's member/auth system the long way. |
-| [`yudao-admin-branding`](skills/yudao-admin-branding/SKILL.md) | Re-branding an admin console by hand and missing half the places the old name appears. |
+| [`weighted-lottery-engine`](skills/weighted-lottery-engine/SKILL.md) · [EN](skills/weighted-lottery-engine/SKILL.en.md) | Weighted-random draw engines that are unfair, unreproducible, or cannot change probability at runtime: optimistic-lock stock, a three-level fallback so a draw never returns null, a 10,000-draw sandbox, and anti-cheat design. |
+| [`yudao-hot-config-pattern`](skills/yudao-hot-config-pattern/SKILL.md) · [EN](skills/yudao-hot-config-pattern/SKILL.en.md) | Campaign parameters that require a redeploy to change. The pattern: an independent endpoint plus a lightweight modal, editable at any time with zero intrusion into the existing code paths. |
+| [`yudao-codegen-pitfalls`](skills/yudao-codegen-pitfalls/SKILL.md) · [EN](skills/yudao-codegen-pitfalls/SKILL.en.md) | Trusting generated CRUD code: output landing in the parent POM, hyphens in package names, duplicate menu component names, dictionaries that were never inserted, empty modules breaking the build. |
+| [`yudao-appapi-integration`](skills/yudao-appapi-integration/SKILL.md) · [EN](skills/yudao-appapi-integration/SKILL.en.md) | Wiring a mini-program client to the framework's member/auth system the long way — including the double-prefix 404 and the `mock-enable` flag that silently turns every user into an admin. |
+| [`yudao-admin-branding`](skills/yudao-admin-branding/SKILL.md) · [EN](skills/yudao-admin-branding/SKILL.en.md) | White-labelling the admin console by hand and missing half the places the old name appears; also why a framework dashboard should be emptied before handover. |
 
 Plus one workflow and one resource:
 
@@ -49,7 +49,7 @@ Or drop a single folder into `.claude/skills/` inside a project. Each skill is s
 
 ## Roadmap
 
-- English translations of the remaining skill bodies (6 of 11 done: `deployment-pitfalls`, `database-operation-safety`, `ai-dev-best-practices`, `docker-springboot-production`, `wechat-pay-v3-yudao`, `mock-zero-tolerance`)
+- ~~English translations of the skill bodies~~ **done: 11 of 11** (every skill has a `SKILL.en.md` beside it)
 - The `mysql-ops-mcp` pattern as a skill: read-only data access for agents
 - A checklist skill for "deliverable" — what must exist before a handover counts as done
 

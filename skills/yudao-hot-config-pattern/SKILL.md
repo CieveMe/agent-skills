@@ -122,7 +122,7 @@ export const updateActivityRule = async (data: any) => {
 
 ```json
 {
-  "pickupAddress": "乌海市内中奖用户可到\"海拉北路\"自提",
+  "pickupAddress": "中奖用户可到指定自提点领取实物奖品",
   "activityDesc": "本活动由商家正规发起。",
   "winRule": "1. 抽奖结果在中奖后即时公布\n2. ...",
   "loseRule": "未中奖用户将获得平台积分奖励",
