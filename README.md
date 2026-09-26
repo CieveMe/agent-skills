@@ -10,9 +10,9 @@ These are the rule sets I actually give my coding agents (Claude Code / Codex / 
 
 | Skill | What it prevents |
 |---|---|
-| [`ai-dev-best-practices`](skills/ai-dev-best-practices/SKILL.md) | Doing AI-assisted development in the wrong order: no plan, no checkpoints, token burn, agents re-doing work they already did. 35 concrete pitfalls collected across 7 sessions. |
+| [`ai-dev-best-practices`](skills/ai-dev-best-practices/SKILL.md) · [EN](skills/ai-dev-best-practices/SKILL.en.md) | Doing AI-assisted development in the wrong order: no plan, no checkpoints, token burn, agents re-doing work they already did, and the five reasons the same bug survives five "fixes". 35 pitfalls collected across 7 sessions. |
 | [`deployment-pitfalls`](skills/deployment-pitfalls/SKILL.md) · [EN](skills/deployment-pitfalls/SKILL.en.md) | Six remote-deployment traps: non-ASCII paths silently breaking `ssh`/`scp` on Windows, hot-swapping a JAR and getting `ClassNotFoundException`, CRLF poisoning shell scripts, PowerShell console encoding corrupting CJK data, and quoting hell through four nested interpreters. |
-| [`docker-springboot-production`](skills/docker-springboot-production/SKILL.md) | Shipping a Spring Boot app with a dev-grade Docker setup: missing healthchecks, wrong file-upload domains, no rollback path. |
+| [`docker-springboot-production`](skills/docker-springboot-production/SKILL.md) · [EN](skills/docker-springboot-production/SKILL.en.md) | Shipping a Spring Boot app with a dev-grade Docker setup: MySQL 8.4 rejecting the old auth flag, `#` in a password truncated by the shell, Redisson failing AUTH against a passwordless Redis, wrong file-upload domain after deploy. |
 | [`database-operation-safety`](skills/database-operation-safety/SKILL.md) · [EN](skills/database-operation-safety/SKILL.en.md) | A data-changing `UPDATE`/`DELETE` that quietly touches the wrong rows, because a filter condition in the instruction was read as background prose. |
 | [`wechat-pay-v3-yudao`](skills/wechat-pay-v3-yudao/SKILL.md) | Getting WeChat Pay V3 integration wrong: signature handling, callback idempotency, refund flows, certificate placement. |
 | [`wechat-pay-v3-yudao/mock-zero-tolerance.md`](skills/wechat-pay-v3-yudao/mock-zero-tolerance.md) | Shipping payment code that "works" against mocks. Written after three real rollbacks. |
@@ -49,7 +49,7 @@ Or drop a single folder into `.claude/skills/` inside a project. Each skill is s
 
 ## Roadmap
 
-- English translations of the remaining skill bodies (2 of 11 done: `deployment-pitfalls`, `database-operation-safety`)
+- English translations of the remaining skill bodies (4 of 11 done: `deployment-pitfalls`, `database-operation-safety`, `ai-dev-best-practices`, `docker-springboot-production`)
 - The `mysql-ops-mcp` pattern as a skill: read-only data access for agents
 - A checklist skill for "deliverable" — what must exist before a handover counts as done
 
