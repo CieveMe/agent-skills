@@ -4,6 +4,41 @@ Every entry below was verified to exist on 2026-09-29 (GitHub API, star counts a
 only). Capabilities change quickly — **check the project's own documentation before relying on a specific
 feature**; this page is a starting list, not a specification.
 
+## AI editors and coding assistants (the layer this question is usually about)
+
+The distinction that matters is not the brand, it is **whether the assistant can attach to the browser you are
+already logged into**, read the page back after every action, and perform actions that need real events
+(file upload, dropdown selection, dialog submission).
+
+Verified against vendor documentation on 2026-09-29:
+
+| Editor / assistant | Browser capability | Evidence |
+|---|---|---|
+| **Cursor** | Built-in **Browser**: the agent can control a browser to test applications, audit accessibility and turn designs into code, with console and network access. | `cursor.com/docs/agent/browser`, read directly |
+| **Cline** (VS Code extension) | Its own docs describe it as an agent that "can read and write files, run terminal commands, **use a browser**". | `docs.cline.bot`, read directly |
+| **Claude Code** (terminal agent) | No built-in browser, but first-class **MCP** support — add Playwright MCP or chrome-devtools-mcp and you get the same shape as this skill. | `docs.claude.com/.../claude-code/mcp`, read directly |
+| **VS Code + Copilot Chat** | Supports MCP tools, so a browser MCP server can be attached. Whether a native browser tool ships in your version: check locally. | not verified — the docs page failed to load during writing |
+| **Windsurf (Cascade)** | Has browser preview and web search; no documentation found for an agent driving third-party sites. | not verified |
+| **Zed / JetBrains (Junie) / Gemini CLI / Trae / Qoder** | Generally MCP-capable, so a browser MCP server can usually be attached; how much is native differs per product. | not verified |
+
+**Three questions that decide whether the experience matches Codex:**
+
+1. Can it attach to **your existing browser profile** (not a fresh, logged-out instance)?
+2. Does it **read the page back** after each action (DOM or screenshot), rather than assuming the click worked?
+3. Can it do actions that require **real events** — file upload, autocomplete selection, dialog submission?
+
+All three → comparable to Codex. Only the first two → it can look and click simple elements, and will fail on
+the forms that matter.
+
+**The portable answer if you do not want to switch editors:** attach
+[`microsoft/playwright-mcp`](https://github.com/microsoft/playwright-mcp) or
+[`ChromeDevTools/chrome-devtools-mcp`](https://github.com/ChromeDevTools/chrome-devtools-mcp) with a persistent
+profile. That reproduces this skill's route inside almost any editor that speaks MCP.
+
+**Keep a command-line fallback.** The native/bridge route depends on the vendor's own plumbing (a browser
+extension, a native host, an app bridge) and that plumbing can break independently of the model. A CLI + CDP
+path — what `SKILL.md` describes — is the fallback that keeps working when the built-in one does not.
+
 ## Protocol-level: give any MCP-capable agent a browser
 
 | Project | What it is | Why it matters here |
