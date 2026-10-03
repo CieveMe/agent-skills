@@ -34,6 +34,10 @@
 4) 现在拿我接下来要说的第一件事做一次完整演示：资料进 raw/、摘要进 wiki/sources/、结论进主题页，
    更新 index.md 与 log.md，并让 hot-cache.md 里明确写着"当前在做什么 / 下一步 / 卡在哪"。
 
+补充说明：**我没装 Obsidian（也不一定打算装）**，请保证这套东西只靠文件就能用——
+链接一律用标准相对 Markdown `[标题](sources/xxx.md)`，不要用 Obsidian 专属的 `[[wikilink]]`；
+需要看的时候我用 VS Code 或 GitHub 网页版就行。
+
 演示完，把你创建的目录树和 AGENTS.md 全文贴给我看。
 ```
 
@@ -114,6 +118,10 @@ Give this project long-term memory, the Obsidian + Karpathy LLM-wiki way. Do thi
    wiki/sources/, conclusions into a topic page, then update index.md and log.md, and make
    hot-cache.md say what we are doing, what is next, and where we are stuck.
 
+Note: **I do not have Obsidian installed (and may never install it).** Keep everything file-only:
+use standard relative Markdown links, `[title](sources/x.md)`, never Obsidian-only `[[wikilinks]]`.
+VS Code or the GitHub web view is how I will read it.
+
 When done, show me the directory tree and the full AGENTS.md.
 ```
 
@@ -145,4 +153,3 @@ wiki/operations/operation-memory.md: the working route (copy-pasteable command, 
 caveats), the routes not to take (why, and what the failure looks like), and a validation command.
 Keep only what would change a future decision; do not paste whole logs.
 ```
-
