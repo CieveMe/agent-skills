@@ -1,13 +1,27 @@
 # 电脑要提前装什么
 
-一句话版本：**必须装的只有 Obsidian；想要历史和备份就再加 Git；其它都不是必需品。**
-整套记忆就是一堆 `.md` 文件和文件夹，没有数据库、没有服务端、不需要联网。
+一句话版本：**什么都不装也能用。** 这套记忆就是一堆 `.md` 文件和文件夹，没有数据库、没有服务端、不需要
+联网；**Obsidian 只是"最好用的阅读器"，不是依赖**——它没装，记忆本体一样工作。
 
-## 必装
+## 按"装多少"分四档（选一档就行）
+
+| 档位 | 需要什么 | 你能得到 | 适合谁 |
+|---|---|---|---|
+| **A. 零安装** | 一个能读写文件的 AI 客户端 + 一个文件夹 | 记忆的全部功能：AI 按 `index.md`/`hot-cache.md` 读，按规矩回写 | 只想先跑起来；或机器受管控、不方便装软件 |
+| **B. 轻量** | 加 **VS Code**（免费） | Markdown 预览、全文搜索（Ctrl+Shift+F）、链接可点 | 多数开发者本来就有 |
+| **C. 完整体验** | 加 **Obsidian**（免费，桌面版） | 双向链接面板、图谱、标签、按页导航、手机端查看 | 想长期经营这个知识库 |
+| **D. 给人看 / 异地访问** | 把 vault 推成 GitHub 仓库（公开或私有） | 网页上就能渲染 Markdown 并点链接，顺带拿到版本历史 | 要分享、要异地访问 |
+
+**关键前提（决定换不换编辑器都不退化）**：链接一律用**标准相对 Markdown 链接**
+`[标题](sources/xxx.md)`，**不要用 Obsidian 专属的 `[[wikilink]]`**。标准链接在 Obsidian、VS Code、
+GitHub、Typora 里都能点开；`[[...]]` 出了 Obsidian 就只是普通文字。
+
+## 各档的明细
 
 | 软件 | 为什么 | 备注 |
 |---|---|---|
-| **Obsidian**（桌面版，免费） | 把这堆 Markdown 当成"可点击链接的知识库"来读：双向链接、图谱、全文搜索、按页导航 | 个人使用免费；**不需要**买 Obsidian Sync——Git 就够备份 |
+| **Obsidian**（桌面版，免费，**可选**） | 把这堆 Markdown 当成"可点击链接的知识库"来读：双向链接、图谱、全文搜索、按页导航 | 只有 C/D 档需要；个人使用免费；**不需要**买 Obsidian Sync——Git 就够备份 |
+| **VS Code**（免费，**可选**） | 有些人不想再装一个 App：VS Code 的 Markdown 预览 + 全文搜索已经够日常读 | B 档；顺带能编辑脚本 |
 
 ## 建议装
 
@@ -47,8 +61,18 @@
 
 ## English version
 
-**Must install: Obsidian (free, desktop).** It turns the Markdown files into a navigable, linkable, searchable
-knowledge base. No sync subscription is required.
+**Nothing has to be installed.** The memory is a set of `.md` files; Obsidian is the nicest *reader*, not a
+dependency. Pick one of four configurations:
+
+| Configuration | What you install | What you get |
+|---|---|---|
+| **A. Zero-install** | an AI client that can read/write files + a folder | the whole method: the AI reads `index.md` / `hot-cache.md` and writes back by the rules |
+| **B. Light** | add **VS Code** (free) | Markdown preview, full-text search (`Ctrl+Shift+F`), clickable links |
+| **C. Full** | add **Obsidian** (free, desktop) | backlinks, graph, tags, page navigation, mobile |
+| **D. Shared / remote** | push the vault to GitHub (public or private) | Markdown rendered in the browser with working links, plus version history |
+
+**The requirement that keeps this portability:** use standard relative Markdown links (`[title](sources/x.md)`),
+never Obsidian-only `[[wikilinks]]`. Standard links open in Obsidian, VS Code, GitHub and Typora alike.
 
 **Recommended: Git** (history, backup, rollback — the vault is plain text) **and one AI client** that can read
 and write files (Codex, Claude Code, Cursor, opencode).

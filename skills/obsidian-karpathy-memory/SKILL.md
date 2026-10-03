@@ -40,6 +40,15 @@ AGENTS.md                 会话必守规则（开工顺序、回写规则、敏
 2. **重要结论带来源。** 写清是"实测/文件路径/链接/用户确认"，还是"推断"。推断不能混进事实里。
 3. **回写有顺序。** 状态变化 → 更新主题页 → 新页同步 `index.md` → 追加 `log.md` → 只有属于当前上下文的
    才写进 `hot-cache.md`。
+4. **链接只用标准相对 Markdown**：`[标题](sources/xxx.md)`，**不要**用 Obsidian 专属的 `[[wikilink]]`——
+   标准链接在 Obsidian / VS Code / GitHub / Typora 里都能点开，换编辑器不退化。
+
+## Obsidian 是可选的（分享给别人时先说这句）
+
+**这套记忆不需要装任何软件**：它是一堆 `.md` 文件，AI 直接读写。Obsidian 的作用是"读起来更舒服"
+（双向链接、图谱、标签、手机端），没装也完全能用——用 VS Code、Typora，甚至把 vault 推成 GitHub 仓库在
+网页上看都行。见 [`references/prerequisites.md`](references/prerequisites.md) 的四档配置（零安装 / VS Code /
+Obsidian / GitHub）。
 
 ## 长期跑下去会遇到的三种腐烂（以及对策）
 
@@ -63,4 +72,3 @@ AGENTS.md                 会话必守规则（开工顺序、回写规则、敏
 如果你所在的环境已经装了通用的 `project-wiki-memory` 技能，它自带初始化与质量检查脚本
 （`init_project_wiki.py` / `check_wiki_quality.py`），可以省掉手建目录；没有也不影响——**这套方法本身
 只需要文件夹和 Markdown**。
-

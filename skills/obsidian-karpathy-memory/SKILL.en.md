@@ -43,6 +43,16 @@ AGENTS.md                 rules every session must follow
    or an inference. Inferences do not get filed as facts.
 3. **Write back in order.** Change → update the topic page → link new pages from `index.md` → append to
    `log.md` → put only what is *current* into `hot-cache.md`.
+4. **Use standard relative Markdown links** — `[title](sources/x.md)` — never Obsidian-only `[[wikilinks]]`.
+   Standard links open in Obsidian, VS Code, GitHub and Typora alike; `[[...]]` becomes plain text outside
+   Obsidian.
+
+## Obsidian is optional (say this first when sharing)
+
+**Nothing has to be installed.** The memory is a set of `.md` files that the AI reads and writes directly.
+Obsidian is the nicest *reader* (backlinks, graph, tags, mobile), but the method works without it: VS Code,
+Typora, or the vault pushed to GitHub and read in the browser are all fine. See the four configurations in
+[`references/prerequisites.md`](references/prerequisites.md) (zero-install / VS Code / Obsidian / GitHub).
 
 ## The three ways it rots, and the fix
 
